@@ -198,8 +198,8 @@
 
     - name: Clone my app repo
       git:
-        repo: git@github.com:ZehavaLiviyev/devops_final_.git
-        dest: /opt/app
+        repo: git@github.com:luaykalboni/DevOps_Final.git
+        dest: /opt/DevOps_Final
         clone: yes
         version: main
         key_file: ~/.ssh/id_rsa
@@ -209,7 +209,7 @@
     - name: Build docker image and push to Dockerhub
       shell: "{{item}}"
       args:
-          chdir: /opt/app
+          chdir: /opt/DevOps_Final
       with_items:
         - docker login -u {{ docker_user }} -p {{ docker_token }}
         - docker build . --tag {{ docker_user }}/devops_final:latest
@@ -218,7 +218,7 @@
     - name: Start docker app
       shell: docker-compose up -d
       args:
-        chdir: /opt/app
+        chdir: /opt/DevOps_Final
 
     - name: output
       debug:
