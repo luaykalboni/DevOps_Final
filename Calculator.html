@@ -1,0 +1,342 @@
+  
+<!doctype html>
+<html lang="en" class="theme1">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="Style/app.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+
+.theme1 {
+  --mobile-size:375px;
+  --web-size:1440px;
+
+  --window-color:hsl(222, 26%, 31%);
+  --calc-background-color: hsla(224, 39%, 20%, 0.801);
+  
+  --result-font-color: #f8f9fa;
+  --title-font-color:#f8f9fa;
+
+  --btn-primery-font-color:hsl(221, 14%, 31%);
+  --btn-primery-color: hsl(30, 25%, 89%);
+
+  --btn-special-font-color:#f8f9fa;
+  --btn-special-color:hsl(225, 21%, 49%);
+  --btn-sum-color:hsl(6, 63%, 50%);
+
+
+  --btn-toggle-color: hsl(6, 63%, 50%);
+  --btn-toggle-shdow-color:hsl(6, 70%, 34%);
+}
+
+
+.theme2 {
+  --mobile-size:375px;
+  --web-size:1440px;
+
+  --window-color: hsl(0, 0%, 93%);
+  --calc-background-color: hsl(0, 5%, 81%);
+  
+  --result-font-color: #000000;
+  --title-font-color:#000000;
+
+  --btn-primery-font-color: hsl(60, 10%, 19%);
+  --btn-primery-color:hsl(0, 5%, 81%);
+
+  --btn-special-font-color:hsl(0, 0, 100%);
+  --btn-special-color: hsl(185, 42%, 37%);
+  --btn-sum-color:hsl(25, 98%, 40%);
+
+  --btn-toggle-color: hsl(6, 63%, 50%);
+  --btn-toggle-shdow-color:hsl(6, 70%, 34%);
+}
+
+/* Colors */
+#window-body{
+  position: relative;
+  background-color: var(--window-color);
+  color:var(--primery-font-color);
+}
+#theme{
+  position: relative;
+display: inline;
+width: min-content;
+}
+
+#theme-range{
+  position: absolute;
+  width: 50px;
+  border: 0ch;
+  left: 120px;
+
+}
+
+#btn-theme{
+  position: absolute;
+  background-color: var(--window-color);
+  border: 0ch;
+  color: var(--title-font-color);
+  left: 60px;
+  font-size: small;
+}
+
+#title{
+  color: var(--title-font-color);
+  font-size: 28px;
+ }
+
+#calc-page{
+  padding-left: 500px;
+  position: relative;
+}
+#calc-result, #calc-input{
+  position: absolute;
+  width:400px;
+  background-color: var(--window-color);
+  font-family: 'Spartan', sans-serif;
+  border-radius:1.5%;
+}
+#calc-input{
+  background-color: var(--calc-background-color);
+  color: var(--btn-primery-font-color);
+  text-align: center;
+  padding: 10px;
+  top:210%;
+  
+}
+#result{
+  color:var(--result-font-color);
+  background-color: var(--calc-background-color);
+  height: 100px;
+  text-align: right;
+  font-family: 'Spartan', sans-serif;
+  font-size:32px;
+  box-shadow: hsl(224, 28%, 35%);
+  border: 0ch;
+
+ }
+ 
+#calc-title{
+  display: flex;
+  padding:30px;
+}
+#title{
+  padding-right: 150px;
+}
+
+#primery{
+  color: var(--btn-primery-font-color);
+  background-color: var(--btn-primery-color);
+}
+
+/* BTN---------------------- */
+#btn-del,#btn-input,#btn-operators,#btn-reset,#btn-sum{
+height: 50px;
+align-content: center;
+border-radius: 4px;
+  
+}
+#btn-del,#btn-input,#btn-operators{
+  font-size:20px;
+  padding:15px;
+  width: 80px;
+}
+
+#btn-operators{
+  position: absolute;
+  right: 30px; 
+}
+.row{
+  padding: 10px;
+}
+#btn-sum{
+  color: var(--btn-sum-font-color);
+  background-color: var(--btn-sum-color);
+  width: 45%;
+  
+}
+#btn-reset{
+  width: 45%; 
+
+}
+#last-row{
+
+position: relative;
+align-items: center;
+}
+#btn-reset , #btn-del{
+  background-color: var(--btn-special-color);
+  color:white;
+}
+
+
+
+/* Size */
+
+    </style>
+
+    <title>Calc</title>
+</head>
+
+<body id="window-body">
+
+    <div id="calc-page">
+        <div id="calc-title">
+            <label id="title"><b>Calc</b></label>
+            <div id="theme">
+                <button id="btn-theme" onclick="themeChange()" type="button">THEME</button>
+                <input type="range" class="form-range" min="0" max="1" step="1" id="theme-range">
+
+            </div>
+        </div>
+            <div id="calc-result">
+                <p id="result" type="text" placeholder="0" class="form-control"></p>
+            </div>
+
+            <div class="calc-items" id="calc-input">
+                <div class="row">
+                <div class="col" >
+                    <button id="btn-input" value="7" class="number">7</button>
+                    <button id="btn-input" value="8" class="number">8</button>
+                    <button id="btn-input" value="9" class="number">9</button>
+                    <button id="btn-del" data-action="delete" value="DEL" class="operator">DEL</button>          </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col">
+                    <button id="btn-input" value="4" class="number">4</button>
+                    <button id="btn-input" value="5" class="number">5</button>
+                    <button id="btn-input" value="6" class="number">6</button>
+                    <button id="btn-input" data-action="plus" value="+" class="operator">+</button>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col">
+                    <button id="btn-input" value="1" class="number">1</button>
+                    <button id="btn-input" value="2" class="number">2</button>
+                    <button id="btn-input" value="3" class="number">3</button>
+                    <button id="btn-input" data-action="minus" value="-" class="operator">-</button>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button id="btn-input" data-action="decimal" value="." class="number">.</button>
+                        <button id="btn-input" value="0" class="number">0</button>
+                        <button id="btn-input" data-action="divide" value="/" class="operator">/</button>
+                        <button id="btn-input" data-action="mul" value="*" class="operator">*</button>
+                    </div>
+                </div> 
+                <div class="row" id="last-row" >
+                    <div class="col">
+                        <button id="btn-reset" data-action="clear" value="RESET" class="operator">RESET</button>
+                        <button id="btn-sum" data-action="calculate" value="=" class="operator">=</button>
+                </div>
+            </div>
+</div>
+</div>
+    <script>
+
+
+
+
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+
+}
+function themeChange() {
+    if (localStorage.getItem('theme') === 'theme1') {
+        setTheme('theme2');
+    } else {
+        setTheme('theme1');
+    }
+}
+(function () {
+    if (localStorage.getItem('theme') === 'theme1') {
+        setTheme('theme1');
+    } else {
+        setTheme('theme2');
+    }
+})();
+
+//Calculator
+const keys = document.querySelector(".calc-items");
+const display = document.querySelector("#result");
+let calcBool = false;
+let num1;
+let num2;
+let operator;
+let res;
+
+keys.addEventListener("click", e => {
+    if (e.target.matches("button")) {
+        const key = e.target;
+        const action = key.dataset.action;
+        const keyContent = key.textContent;
+        const displayedNum = display.innerHTML;
+
+        if (!action) {
+            if (displayedNum === "0" || calcBool == true) {
+                display.innerHTML = keyContent;
+                calcBool = false;
+            }
+            else {
+                display.innerHTML += keyContent;
+                calcBool = false;
+            }
+        }
+
+        if (action === 'clear') {
+            display.innerHTML = "0";
+        }
+        if (action === 'decimal') {
+            display.textContent += '.';
+        }
+        if (action === 'plus' || action === 'minus' || action === 'mul' || action === 'divide') {
+            operator = action;
+
+            num1 = parseFloat(display.innerHTML);
+            display.innerHTML = "";
+        }
+
+        if (action === 'calculate') {
+            num2 = parseFloat(display.innerHTML);
+
+            switch (operator) {
+                case ("plus"):
+                    res = num1 + num2;
+                    break;
+                case ("minus"):
+                    res = num1 - num2;
+                    break;
+                case ("mul"):
+                    res = num1 * num2;
+                    break;
+                case ("divide"):
+                    res = num1 / num2;
+                    break;
+            }
+            calcBool = true;
+            display.innerHTML = res;
+
+        }
+    }
+});
+
+
+    </script>
+
+
+    </script>    
+
+</body>

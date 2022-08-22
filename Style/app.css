@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+
+.theme1 {
+  --mobile-size:375px;
+  --web-size:1440px;
+
+  --window-color:hsl(222, 26%, 31%);
+  --calc-background-color: hsla(224, 39%, 20%, 0.801);
+  
+  --result-font-color: #f8f9fa;
+  --title-font-color:#f8f9fa;
+
+  --btn-primery-font-color:hsl(221, 14%, 31%);
+  --btn-primery-color: hsl(30, 25%, 89%);
+
+  --btn-special-font-color:#f8f9fa;
+  --btn-special-color:hsl(225, 21%, 49%);
+  --btn-sum-color:hsl(6, 63%, 50%);
+
+
+  --btn-toggle-color: hsl(6, 63%, 50%);
+  --btn-toggle-shdow-color:hsl(6, 70%, 34%);
+}
+
+
+.theme2 {
+  --mobile-size:375px;
+  --web-size:1440px;
+
+  --window-color: hsl(0, 0%, 93%);
+  --calc-background-color: hsl(0, 5%, 81%);
+  
+  --result-font-color: #000000;
+  --title-font-color:#000000;
+
+  --btn-primery-font-color: hsl(60, 10%, 19%);
+  --btn-primery-color:hsl(0, 5%, 81%);
+
+  --btn-special-font-color:hsl(0, 0, 100%);
+  --btn-special-color: hsl(185, 42%, 37%);
+  --btn-sum-color:hsl(25, 98%, 40%);
+
+  --btn-toggle-color: hsl(6, 63%, 50%);
+  --btn-toggle-shdow-color:hsl(6, 70%, 34%);
+}
+
+/* Colors */
+#window-body{
+  position: relative;
+  background-color: var(--window-color);
+  color:var(--primery-font-color);
+}
+#theme{
+  position: relative;
+display: inline;
+width: min-content;
+}
+
+#theme-range{
+  position: absolute;
+  width: 50px;
+  border: 0ch;
+  left: 120px;
+
+}
+
+#btn-theme{
+  position: absolute;
+  background-color: var(--window-color);
+  border: 0ch;
+  color: var(--title-font-color);
+  left: 60px;
+  font-size: small;
+}
+
+#title{
+  color: var(--title-font-color);
+  font-size: 28px;
+ }
+
+#calc-page{
+  padding-left: 500px;
+  position: relative;
+}
+#calc-result, #calc-input{
+  position: absolute;
+  width:400px;
+  background-color: var(--window-color);
+  font-family: 'Spartan', sans-serif;
+  border-radius:1.5%;
+}
+#calc-input{
+  background-color: var(--calc-background-color);
+  color: var(--btn-primery-font-color);
+  text-align: center;
+  padding: 10px;
+  top:210%;
+  
+}
+#result{
+  color:var(--result-font-color);
+  background-color: var(--calc-background-color);
+  height: 100px;
+  text-align: right;
+  font-family: 'Spartan', sans-serif;
+  font-size:32px;
+  box-shadow: hsl(224, 28%, 35%);
+  border: 0ch;
+
+ }
+ 
+#calc-title{
+  display: flex;
+  padding:30px;
+}
+#title{
+  padding-right: 150px;
+}
+
+#primery{
+  color: var(--btn-primery-font-color);
+  background-color: var(--btn-primery-color);
+}
+
+/* BTN---------------------- */
+#btn-del,#btn-input,#btn-operators,#btn-reset,#btn-sum{
+height: 50px;
+align-content: center;
+border-radius: 4px;
+  
+}
+#btn-del,#btn-input,#btn-operators{
+  font-size:20px;
+  padding:15px;
+  width: 80px;
+}
+
+#btn-operators{
+  position: absolute;
+  right: 30px; 
+}
+.row{
+  padding: 10px;
+}
+#btn-sum{
+  color: var(--btn-sum-font-color);
+  background-color: var(--btn-sum-color);
+  width: 45%;
+  
+}
+#btn-reset{
+  width: 45%; 
+
+}
+#last-row{
+
+position: relative;
+align-items: center;
+}
+#btn-reset , #btn-del{
+  background-color: var(--btn-special-color);
+  color:white;
+}
+
+
+
+/* Size */
