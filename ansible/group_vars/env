@@ -1,0 +1,14 @@
+server_name: devops_final
+env: dev
+
+vpc_name: my-app-vpc
+network: 10.1.0.0/16
+subnet_public: 10.1.0.0/24
+env_name: colman
+zone: eu-central-1
+subnet1: eu-central-1a
+
+keypair: id_rsa
+aws_centos_ami: ami-08b6d44b4f6f7b279
+Server_type: t2.micro
+server_volume_size: 8
