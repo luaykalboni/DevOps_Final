@@ -8,7 +8,7 @@ env_name: colman
 zone: eu-central-1
 subnet1: eu-central-1a
 
-keypair: id_rsa
+keypair: ansible
 aws_centos_ami: ami-08b6d44b4f6f7b279
 Server_type: t2.micro
 server_volume_size: 8
