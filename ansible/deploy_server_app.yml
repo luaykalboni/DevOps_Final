@@ -152,7 +152,7 @@
   hosts: app
   user: centos
   become: True
-  gather_facts: False
+  gather_facts: True
   vars_files:
     - group_vars/env
     - group_vars/colman.env
