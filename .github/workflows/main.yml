@@ -35,7 +35,7 @@ jobs:
          port: ${{secrets.PORT}}
          script_stop: true
          script: |
-            # cd /opt/app
+            # cd /opt/DevOps_Final
             # sudo docker-compose pull & docker-compose up -d --force-recreate
             sudo docker stop devops_final
             sudo docker rm devops_final
