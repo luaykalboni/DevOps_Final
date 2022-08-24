@@ -1,5 +1,5 @@
 FROM node:16.14
-WORKDIR /app
+WORKDIR /DevOps_Final
 COPY package*.json ./
 RUN npm install
 COPY . .
