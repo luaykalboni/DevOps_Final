@@ -1,5 +1,5 @@
-FROM node:16.14
-WORKDIR /DevOps_Final
+FROM node:10.19.0
+WORKDIR /opt/DevOps_Final
 COPY package*.json ./
 RUN npm install
 COPY . .
