@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  web:
+    container_name: devops_final
+    environment:
+      - NODE_ENV=prod
+    image: devops_final:latest
+    ports:
+      - "80:3000"
